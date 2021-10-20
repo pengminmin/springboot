@@ -12,10 +12,11 @@ import org.springframework.web.bind.annotation.RestController;
 public class HomeController {
 
     @GetMapping("/")
-    public Result index() {
+    public Result<?> index() {
         if(1 == 1){
             throw new RuntimeException("1232");
         }
+
         return Result.success("index");
     }
 }

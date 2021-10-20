@@ -44,11 +44,13 @@ public class Result<T> implements Serializable {
         return new Result(ResultCodeEnum.SUCCESS, data);
     }
 
-    public static Result fail(){
+    public static Result fail() {
         return new Result(ResultCodeEnum.FAILED);
     }
 
-
+    public static <T> Result<?> forbidden(T data) {
+        return new Result<>(ResultCodeEnum.FORBIDDEN, data);
+    }
 
 
 }
